@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Baking Buddy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script src="script.js"></script>
+
+
+<body>
+
+    <!-- INTRO SCREEN -->
+<div id="intro" class="intro-screen">
+
+    <h1>Hi 👋</h1>
+
+    <p>My name is Cookie 🍪</p>
+
+    <p>Your baking buddy</p>
+
+    <button onclick="startApp()">
+        Start
+    </button>
+
+</div>
+
+<!-- HOME SCREEN -->
+<div id="home" class="home-screen" style="display:none;">
+
+    <h1>🍰 My Baking Buddy</h1>
+
+    <button onclick="showPage('measure')">
+        📏 Measurements
+    </button>
+
+    <button onclick="showPage('temp')">
+        🌡 Temperature
+    </button>
+
+    <button onclick="showPage('timer')">
+        ⏲ Timer
+    </button>
+
+</div>
+
+<!-- MEASUREMENT SCREEN -->
+<div id="measure" style="display:none;">
+
+<div class="converter-card">
+
+    <h2>📏 Measurement Converter</h2>
+
+    <!-- Ingredient -->
+    <h4>Ingredient</h4>
+
+    <select id="ingredient">
+
+        <option value="" disabled selected>
+            Select Ingredient
+        </option>
+
+        <option value="APflour">
+            All-Purpose Flour
+        </option>
+
+        <option value="sugar">
+            Sugar
+        </option>
+
+        <option value="butter">
+            Butter
+        </option>
+
+         <option value="milk">
+            Milk
+        </option>
+
+         <option value="cocoa">
+            Cocoa Powder
+        </option>
+
+         <option value="yeast">
+            Active-dry Yeast
+        </option>
+
+    </select>
+
+    <!-- FROM + TO -->
+    <div class="row">
+
+        <div class="box">
+
+            <h4>Convert from:</h4>
+
+            <select id="fromUnit">
+
+                <option value="" disabled selected>
+                    Select Unit
+                </option>
+
+                <option value="cups">
+                    Cups
+                </option>
+
+                <option value="grams">
+                    Grams
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="box">
+
+            <h4>Convert to:</h4>
+
+            <select id="toUnit">
+
+                <option value="" disabled selected>
+                    Select Unit
+                </option>
+
+                <option value="grams">
+                    Grams
+                </option>
+
+                <option value="cups">
+                    Cups
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+    <!-- MEASUREMENT -->
+    <h4>Measurement</h4>
+
+    <div class="measure-row">
+
+        <input
+            type="number"
+            id="amount"
+            placeholder="Enter amount">
+
+        <button onclick="convert()">
+            Convert
+        </button>
+
+    </div>
+
+    <!-- RESULT -->
+    <div class="result-box">
+
+       <div class="result-line">
+
+         <h4>Result:</h4>
+
+          <p id="result"></p>
+
+</div>
+
+    </div>
+
+    <!-- BACK -->
+    <button
+        onclick="showPage('home')"
+        class="back-btn">
+
+        ⬅ Back
+
+    </button>
+
+    </div>
+</div>
+
+<!-- TEMP SCREEN (empty for now) -->
+<div id="temp" style="display:none;">
+
+    <div class="converter-card">
+
+        <h2>🌡 Temperature Converter</h2>
+
+        <div class="row">
+
+            <div class="box">
+
+                <h4>Convert From</h4>
+
+                <select id="tempFrom">
+
+                    <option value="" disabled selected>
+                        Select Unit
+                    </option>
+
+                    <option value="c">
+                        Celsius
+                    </option>
+
+                    <option value="f">
+                        Fahrenheit
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="box">
+
+                <h4>Convert To</h4>
+
+                <select id="tempTo">
+
+                    <option value="" disabled selected>
+                        Select Unit
+                    </option>
+
+                    <option value="c">
+                        Celsius
+                    </option>
+
+                    <option value="f">
+                        Fahrenheit
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <h4>Temperature</h4>
+
+        <div class="measure-row">
+
+            <input
+                type="number"
+                id="tempInput"
+                placeholder="Enter temperature">
+
+            <button onclick="convertTemp()">
+                Convert
+            </button>
+
+        </div>
+
+        <div class="result-box">
+
+            <div class="result-line">
+
+                <h4>Result:</h4>
+
+                <p id="tempResult"></p>
+
+            </div>
+
+        </div>
+
+        <button
+            onclick="showPage('home')"
+            class="back-btn">
+
+            ⬅ Back
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- TIMER SCREEN (empty for now) -->
+<div id="timer" style="display:none;">
+
+    <div class="converter-card">
+
+        <h2>⏲ Baking Timer</h2>
+
+        <h4>Minutes</h4>
+
+        <input
+            type="number"
+            id="timerMinutes"
+            placeholder="Enter minutes">
+
+        <br><br>
+
+        <button onclick="startTimer()">
+            Start
+        </button>
+
+        <button onclick="resetTimer()">
+            Reset
+        </button>
+
+        <div class="result-box">
+
+            <div class="result-line">
+
+                <h4>Time Left:</h4>
+
+                <p id="countdown">00:00</p>
+
+            </div>
+
+        </div>
+
+        <button
+            onclick="showPage('home')"
+            class="back-btn">
+
+            ⬅ Back
+
+        </button>
+
+    </div>
+
+</div>
+
+</body>
+</html>
